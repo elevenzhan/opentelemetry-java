@@ -11,9 +11,7 @@ public class GlobalLogEmitterProvider {
 
   private GlobalLogEmitterProvider() {}
 
-  /**
-   * Returns the globally registered {@link LogEmitterProvider}.
-   */
+  /** Returns the globally registered {@link LogEmitterProvider}. */
   public static LogEmitterProvider get() {
     return globalLogEmitterProvider;
   }

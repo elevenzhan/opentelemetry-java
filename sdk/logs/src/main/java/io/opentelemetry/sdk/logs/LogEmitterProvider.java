@@ -10,8 +10,8 @@ import javax.annotation.concurrent.ThreadSafe;
 /**
  * A registry for creating named {@link LogEmitter}s.
  *
- * <p>A LogProvider represents a configured (or noop) Log collection system that can be used to
- * instrument code.
+ * <p>A LogEmitterProvider represents a configured (or noop) Log collection system that can be used
+ * to instrument code.
  *
  * <p>The name <i>Provider</i> is for consistency with other languages and it is <b>NOT</b> loaded
  * using reflection.
@@ -36,11 +36,12 @@ public interface LogEmitterProvider {
    * @param instrumentationName The name of the instrumentation library, not the name of the
    *     instrument*ed* library.
    * @return a LogEmitterBuilder instance.
-   * @since 1.10.1
    */
   LogEmitterBuilder logEmitterBuilder(String instrumentationName);
 
-  /** Returns a no-op {@link LogEmitterProvider} which provides meters which do not record or emit. */
+  /**
+   * Returns a no-op {@link LogEmitterProvider} which provides meters which do not record or emit.
+   */
   static LogEmitterProvider noop() {
     return DefaultLogEmitterProvider.getInstance();
   }
